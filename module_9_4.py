@@ -2,8 +2,7 @@ first = 'Мама мыла раму'
 second = 'Рамена мало было'
 compare = list(map(lambda x, y: x == y, first, second))
 
-print(compare)  # Вывод: [False, True, True, False, False, False, False, False, True, False, False, False, False, False]
-
+print(compare)
 def get_advanced_writer(file_name):
     def write_everything(*data_set):
         with open(file_name, 'w', encoding='utf-8') as file:
@@ -24,6 +23,8 @@ class MysticBall:
     def __call__(self):
         return self.call()
 
+writer = get_advanced_writer('example.txt')
+writer('Это строчка', ['А', 'это', 'уже', 'число', 5, 'в', 'списке'])
 
 first_ball = MysticBall('Да', 'Нет', 'Наверное')
 print(first_ball())
